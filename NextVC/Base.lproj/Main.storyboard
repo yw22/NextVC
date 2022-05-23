@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,7 +61,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="StoryBoard with Button Segue"/>
                                         <connections>
-                                            <action selector="storyBoardWithButtonSegueButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zQ4-Rz-oFS"/>
+                                            <segue destination="etV-B5-qa9" kind="presentation" identifier="toFourthVC" id="0u7-kN-XXQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,51 +76,146 @@
                             <constraint firstItem="scV-3l-LAu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="xzd-ah-6nK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="PCE-py-UZB" kind="presentation" identifier="toThirdVC" id="vIl-qt-rbD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20" y="94"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="96k-Gf-WY1">
             <objects>
-                <viewController id="COP-RZ-P04" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondVC" id="COP-RZ-P04" customClass="SecondViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3yF-Fd-mlY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second View Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLs-hs-VbN">
+                                <rect key="frame" x="91.5" y="435" width="231" height="26"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qb4-aC-e9K">
+                                <rect key="frame" x="173.5" y="781" width="67" height="31"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="COP-RZ-P04" eventType="touchUpInside" id="CNv-hM-ify"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wTy-Wv-K09"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qb4-aC-e9K" firstAttribute="centerX" secondItem="3yF-Fd-mlY" secondAttribute="centerX" id="8q8-f8-12P"/>
+                            <constraint firstItem="eLs-hs-VbN" firstAttribute="centerX" secondItem="3yF-Fd-mlY" secondAttribute="centerX" id="Wcf-8E-xqY"/>
+                            <constraint firstItem="eLs-hs-VbN" firstAttribute="centerY" secondItem="3yF-Fd-mlY" secondAttribute="centerY" id="X0i-kd-edy"/>
+                            <constraint firstItem="eLs-hs-VbN" firstAttribute="top" secondItem="wTy-Wv-K09" secondAttribute="top" constant="300" id="X7k-1w-GiX"/>
+                            <constraint firstItem="eLs-hs-VbN" firstAttribute="leading" secondItem="wTy-Wv-K09" secondAttribute="leading" constant="50" id="kh2-9K-hhJ"/>
+                            <constraint firstItem="wTy-Wv-K09" firstAttribute="bottom" secondItem="qb4-aC-e9K" secondAttribute="bottom" constant="50" id="mtf-5y-fL6"/>
+                            <constraint firstAttribute="trailing" secondItem="eLs-hs-VbN" secondAttribute="trailing" constant="20" symbolic="YES" id="yl0-mu-bQ6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="X7k-1w-GiX"/>
+                                <exclude reference="kh2-9K-hhJ"/>
+                                <exclude reference="yl0-mu-bQ6"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="eLs-hs-VbN" id="X62-5o-2gT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2iJ-i6-not" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1425" y="-784"/>
         </scene>
-        <!--View Controller-->
+        <!--Third View Controller-->
         <scene sceneID="kNK-fj-OTv">
             <objects>
-                <viewController id="PCE-py-UZB" sceneMemberID="viewController">
+                <viewController id="PCE-py-UZB" customClass="ThirdViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XOa-pD-Q1S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third View Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VK2-XY-L6C">
+                                <rect key="frame" x="103" y="408" width="208" height="26"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEZ-bB-05O">
+                                <rect key="frame" x="173.5" y="727" width="67" height="31"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="PCE-py-UZB" eventType="touchUpInside" id="sSg-9y-ERf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dZc-G1-0Cd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VK2-XY-L6C" firstAttribute="centerY" secondItem="XOa-pD-Q1S" secondAttribute="centerY" id="e9s-7r-0ev"/>
+                            <constraint firstItem="QEZ-bB-05O" firstAttribute="centerX" secondItem="XOa-pD-Q1S" secondAttribute="centerX" id="j1L-9K-2b8"/>
+                            <constraint firstItem="dZc-G1-0Cd" firstAttribute="bottom" secondItem="QEZ-bB-05O" secondAttribute="bottom" constant="50" id="tmF-PE-ypO"/>
+                            <constraint firstItem="VK2-XY-L6C" firstAttribute="centerX" secondItem="XOa-pD-Q1S" secondAttribute="centerX" id="wZQ-Jy-S6S"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="VK2-XY-L6C" id="WPe-zx-BTh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rr7-MF-WGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1425" y="94"/>
         </scene>
-        <!--View Controller-->
+        <!--Fourth View Controller-->
         <scene sceneID="nIn-wg-SBx">
             <objects>
-                <viewController id="etV-B5-qa9" sceneMemberID="viewController">
+                <viewController id="etV-B5-qa9" customClass="FourthViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jIc-pQ-OyK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Four View Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzW-b2-3u2">
+                                <rect key="frame" x="106.5" y="408" width="201" height="26"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9o-BN-R7M">
+                                <rect key="frame" x="173.5" y="727" width="67" height="31"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="etV-B5-qa9" eventType="touchUpInside" id="ZQJ-Kz-YHP"/>
+                                    <action selector="buttonTapped:" destination="PCE-py-UZB" eventType="touchUpInside" id="ubI-UV-Jnp"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sto-Xj-ach"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lzW-b2-3u2" firstAttribute="centerX" secondItem="jIc-pQ-OyK" secondAttribute="centerX" id="SzW-k8-tKc"/>
+                            <constraint firstItem="q9o-BN-R7M" firstAttribute="centerX" secondItem="jIc-pQ-OyK" secondAttribute="centerX" id="nRT-LI-meW"/>
+                            <constraint firstItem="sto-Xj-ach" firstAttribute="bottom" secondItem="q9o-BN-R7M" secondAttribute="bottom" constant="50" id="t58-aw-hz9"/>
+                            <constraint firstItem="lzW-b2-3u2" firstAttribute="centerY" secondItem="jIc-pQ-OyK" secondAttribute="centerY" id="tyB-gn-3Fx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainLable" destination="lzW-b2-3u2" id="qJh-XY-E4K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0M-yx-QqP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,6 +223,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

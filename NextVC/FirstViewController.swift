@@ -22,6 +22,8 @@ class FirstViewController: UIViewController {
         return back
     }()
     
+    var someString: String?
+    
     
     
     override func viewDidLoad() {
@@ -35,7 +37,7 @@ class FirstViewController: UIViewController {
     
     
     func setup(){
-        mainLabel.text = "안녕하세요!!!"
+        mainLabel.text = someString
         mainLabel.font = .systemFont(ofSize: 22)
         
         view.addSubview(mainLabel)
@@ -59,7 +61,8 @@ class FirstViewController: UIViewController {
     
     
     @objc func backButtonTapped() {
-        
+        // 전화면으로 돌아가는 코드
+        dismiss(animated: true, completion: nil)
     }
     
 }
